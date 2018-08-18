@@ -1,0 +1,20 @@
+<view class="main">
+  <view class="stores">
+  <view class="stores-hd">
+    <text>添加门店，请登录 www.huajietaojin.cn 进行操作！</text>
+  </view>
+  <block wx:for="{{list}}" wx:key="{{index}}">
+    <view class="stores-item">
+      <view class="stores-item-name ellipsis">
+        <text>{{item.name}}</text>
+      </view>
+      <view class="stores-item-text">
+        <text>{{item.contact}}</text>
+      </view>
+      <view class="stores-item-text">
+        <text>{{item.address}}</text>
+      </view>
+    </view>
+  </block>
+  </view>
+</view>

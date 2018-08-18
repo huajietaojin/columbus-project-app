@@ -1,0 +1,38 @@
+<view class="main">
+  <view class="firm">
+    <view class="firm-tip-hd" wx:if="{{!hasFirmInfo}}">
+      <text>设置企业信息，请登录 www.huajietaojin.cn 操作</text>
+    </view>
+    <view class="firm-box-hd">
+      <image src="/image/ico_vip.png" class="icon-vip"></image>
+      <view class="firm-box-text ellipsis">{{firmInfo.legal_name}}</view>
+    </view>
+    <view class="firm-box-bd">
+      <view class="firm-box-item">
+        <view class="firm-box-item-l-address">企业名称</view>
+        <view class="firm-box-item-r-address">{{firmInfo.legal_name}}</view>
+      </view>
+      <view class="firm-box-item">
+        <text class="firm-box-item-l">社会信用代码</text>
+        <text class="firm-box-item-r">{{firmInfo.license_code}}</text>
+      </view>
+      <view class="firm-box-item">
+        <text class="firm-box-item-l">法定代表人</text>
+        <text class="firm-box-item-r">{{firmInfo.legal_person}}</text>
+      </view>
+      <view class="firm-box-item">
+        <view class="firm-box-item-l-address">企业地址</view>
+        <view class="firm-box-item-r-address">{{firmInfo.legal_address}}</view>
+      </view>
+      <view class="firm-license-picture" wx:if="{{hasFirmInfo}}">
+        <text class="firm-box-item-l">营业执照</text>
+        <image src="{{firmInfo.license_picture}}" class="firm-img"></image>
+      </view>
+      <view class="firm-box-item">
+        <text class="firm-box-item-l">修改时间</text>
+        <text class="firm-box-item-r">{{updateAt}}</text>
+      </view>
+    </view>
+    <view class='btn' bindtap='loginOutBusiness'>退出商家登录</view>
+  </view>
+</view>

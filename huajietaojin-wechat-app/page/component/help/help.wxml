@@ -1,0 +1,66 @@
+<view class="main">
+  <view class="modal-item-icon">
+    <image src="{{couponItem.picture}}" class="logo"></image>
+  </view>
+  <view class="modal-item-01">
+    <text class="item-text-green">{{couponUsage.store_name}}</text>
+  </view>
+  <view class="modal-item-02">
+    <view class="num-box">
+      <text class="item-text-red">{{couponUsage.retweets}}</text>
+    </view>
+    <view class="num-box-line">
+      <view class="line"></view>
+    </view>
+    <view class="num-all-box">
+      <text>需要热度：{{couponUsage.require_retweets}}</text>
+    </view>
+    <view class="circle-box" hidden='{{!showCircle}}'>
+      <canvas class="circle" style="z-index:2;width:150px; height:150px;" canvas-id="canvasCircle">
+      </canvas>
+      <canvas class="circle" style="z-index:3;width:150px; height:150px;" canvas-id="canvasArcCir">
+      </canvas>
+      <!-- <view class="draw_btn" bindtap="drawCircle">开始动态绘制</view> -->
+    </view>
+  </view>
+  <view class="modal-item-03">
+    <button class="app-normal-btn" open-type="share">
+      增加热度
+    </button>
+  </view>
+
+  <view class="open-rule" bindtap='openModal'>规则说明</view>
+  <view class="mask" wx:if="{{showModal}}"></view>
+  <view class="modal-box" wx:if="{{showModal}}">
+    <view class="modal-content">
+      <view class="modal-content-con">
+        <view class="modal-content-hd">
+          <text>使用说明：</text>
+        </view>
+        <view class="rule-content">
+          <view class="modal-content-item">
+            <text>1、现金券当前热度不足，无法发挥它的功效。一个人浏览一次能为该现金券增加一个热度，重复浏览不增加热度。</text>
+          </view>
+          <view class="modal-content-item">
+            <text>2、现金券所需热度数和优惠额度由商家设置，消费者用户可以帮助提高现金券热度来获取该现金券的优惠额度。</text>
+          </view>
+          <view class="modal-content-item">
+            <text>3、满足现金券热度数后现金券即时可用，无需付费购买。消费者用户输入原始价格后会自动计算最终所需实付金额，并将实付金额出示即可。</text>
+          </view>
+          <view class="modal-content-item">
+            <text>4、本现金券由商家({{couponItem.store_name}})发行，由本平台监督。</text>
+          </view>
+          <view class="modal-content-item">
+            <text>5、平台为消费者用户所有权利提供可靠保障，任何欺诈消费者的商家都将受到全网下线处理的处罚。</text>
+          </view>
+          <view class="modal-content-item">
+            <text>6、本平台保留最终解释权。</text>
+          </view>
+        </view>
+      </view>
+      <view class="modal-content-close">
+        <image class="icon-close" bindtap="closeModal" mode="aspectFill" lazy-load="true" src="/image/ic_close.png" />
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,56 @@
+{
+  "pages": [
+
+      "page/component/bootstrap/play/play",
+      
+      "page/component/coupon/index/index",
+      "page/component/coupon/detail/detail",
+      "page/component/search/search",
+
+      "page/component/home/index/index",
+      "page/component/home/bind-mobile/bind-mobile",
+      "page/component/home/my-coupon/my-coupon",
+      "page/component/home/my-consume/my-consume",
+      "page/component/home/my-consume-detail/my-consume-detail",
+
+      "page/component/store/main/main",
+      "page/component/store/video/video",
+      "page/component/store/list/list",
+      "page/component/store/detail/detail",
+
+      "page/component/help/help",
+      "page/component/pay/index/index",
+      "page/component/pay/result/result",
+      
+      "page/component/echart/coupon-chart/coupon-chart",
+      "page/component/echart/store-chart/store-chart",
+      "page/component/echart/money-chart/money-chart",
+
+      "page/component/business/index/index",
+      "page/component/business/login/login",
+      "page/component/business/register/register",
+      "page/component/business/coupon-retweet/coupon-retweet",
+      "page/component/business/store-retweet/store-retweet",
+      "page/component/business/trade-retweet/trade-retweet",
+      "page/component/business/trading/trading",
+      "page/component/business/trading-detail/trading-detail",
+      "page/component/business/my-stores/my-stores",
+      "page/component/business/my-coupon/my-coupon",
+      "page/component/business/setting/setting"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#151721",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "花街淘金",
+    "backgroundColor": "#eeeeee",
+    "enablePullDownRefresh": false,
+    "navigationStyle": "default"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

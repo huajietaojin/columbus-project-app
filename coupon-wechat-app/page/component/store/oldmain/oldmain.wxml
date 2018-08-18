@@ -1,0 +1,90 @@
+<!-- <view class="title-bar-white" style="top: {{statusBarHeight||0}}px;">
+  <image class="title-back-icon" mode="aspectFill" src="/image/back_white.png" catchtap='goBack'></image>
+  <view class="title-name-text">
+    <text>{{titleName || ''}}</text>
+  </view>
+</view> -->
+<view class="main">
+  <swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}" wx:for-index="index">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="store-box">
+    <view class="store-box-title">{{store.name}}</view>
+    <view class="store-box-item">
+      <image src="/image/ic_position.png" class="address-icon"></image>
+      <view class="store-address-text">{{store.address}}</view>
+    </view>
+    <view class="store-box-item">
+      <image src="/image/ic_phone.png" class="address-icon" style="left:3rpx;"></image>
+      <view class="store-address-text">{{store.contact}}</view>
+    </view>
+  </view>
+  <view class="see-product-box" wx:if="{{store.show_product}}">
+    <navigator url="../list/list?storeId={{storeId}}">
+      <view class="see-btn">
+        <text>查看商品</text>
+      </view>
+    </navigator>
+  </view>
+
+  <!-- product list -->
+  <view class="coupon-box">
+    <view class="coupon-box-hd">
+      <text class="coupon-title">本店优惠券</text>
+      <image class="coupon-box-icon" src="/image/ic_other_coupons.png"></image>
+    </view>
+    <scroll-view scroll-y="true" class="scroll-view-area" scroll-with-animation="true" enable-back-to-top="true">
+      <block wx:for="{{coupons}}" wx:key="{{index}}">
+        <view class="card-out">
+          <view class="card-large">
+            <navigator url="../../coupon/detail/detail?couponId={{item.id}}">
+              <view class="card-list">
+                <view class="card-item">
+                  <image wx:if="{{item.type === 1}}" class="card-item-image" mode="aspectFill" lazy-load="true" src="/image/bg_cashcoupons.png" />
+                  <image wx:if="{{item.type === 2}}" class="card-item-image" mode="aspectFill" lazy-load="true" src="/image/bg_discount_coupons.png" />
+                  <image class="card-item-logo" mode="aspectFill" lazy-load="true" src="{{item.picture}}" />
+                  <view class="card-store-title">{{item.store_name}}</view>
+                  <view class="card-line"></view>
+                  <view wx:if="{{item.type === 1}}" class="card-coupon-num">¥{{item.content}}</view>
+                  <view wx:if="{{item.type === 2}}" class="card-coupon-num">{{item.content}}折</view>
+                  <view wx:if="{{item.type === 1}}" class="card-coupon-txt">现金券</view>
+                  <view wx:if="{{item.type === 2}}" class="card-coupon-txt">折扣券</view>
+                </view>
+              </view>
+            </navigator>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+
+  <view class="mask" wx:if="{{showGetUserModal}}"></view>
+  <view class="modal-box" wx:if="{{showGetUserModal}}">
+    <view class="modal-content">
+      <view class="modal-content-con">
+        <view class="rule-content" style='text-align:center'>
+          <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 点我验证是否为机器人 </button>
+          <view wx:else>请升级微信版本</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="float-home-btn" bindtap="onHomeBtnShow">
+    <image class="float-home-btn-image" src="/image/index.png"></image>
+  </view>
+
+  <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange">
+    <block wx:for="{{actionSheetItems}}" wx:key="{{index}}">
+      <action-sheet-item wx:if="{{index == 0}}" class="sheet-button">
+        <button class="sheet-item-button" open-type="share" hover-class="btn-hover">{{item.txt}}</button>
+      </action-sheet-item>
+      <action-sheet-item bindtap="{{item.bindtap}}" class="sheet-button" wx:else>{{item.txt}}</action-sheet-item>
+    </block>
+    <action-sheet-cancel class="sheet-button-cancel">取消</action-sheet-cancel>
+  </action-sheet>
+</view>

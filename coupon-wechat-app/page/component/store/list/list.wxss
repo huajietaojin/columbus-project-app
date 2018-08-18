@@ -1,0 +1,19 @@
+@import '../../../common/common.wxss';
+
+page {
+  background-color: none;
+}
+.banner image{
+    width: 100%;
+}
+.card-large.none {
+  box-shadow:none;
+}
+.card-item-image.prd {
+  border-radius: 10rpx;
+}
+.product-name {
+  min-height: 70rpx;
+  line-height: 70rpx;
+  font-size: 30rpx;
+}

@@ -1,0 +1,37 @@
+<view class="container">
+  <view class="video-area" bindtouchstart="handletouchtart" bindtouchend="handletouchend">
+    <swiper vertical="{{true}}" circular="{{false}}" previous-margin="previousMargin" next-margin="nextMargin" style="width: 100%;height: {{videoHeight}};overflow: hidden;" bindchange="handlebindchange" bindanimationfinish="handanimationfinish" duration="1000">
+      <block wx:for="{{videos}}" wx:key="{{index}}">
+        <swiper-item id="{{item.id}}" item-id="{{item.id}}" class="swiper-item {{curr_id == item.id && goTop ? 'absolute-top': ''}}">
+          <video bindtap="handletap" bindtouchmove="handletouchmove" bindplay="handleplay" controls="{{false}}" style="width:{{'100%'}};height:{{videoHeight}};min-height:99%;" autoplay="{{false}}" loop="{{true}}" id="myVideo{{item.id}}" data-id="{{item.id}}" show-center-play-btn="{{false}}"
+            src="{{item.video_url}}" muted="{{false}}" binderror="videoErrorCallback" objectFit="cover">
+             <cover-view class="top-bar">
+              <cover-image class="round-logo-small" src="/image/search.png" bindtap="toSearchPage" />
+            </cover-view> 
+            <cover-view wx:if="{{curr_id == item.id && isPlaying === false}}" class="cover-play">
+              <cover-image class="play-icon" src="/image/play.png" bindtap="videoPlay" />
+            </cover-view>
+            <cover-view class="left-bottom-bar-cover">
+              <cover-view class="left-bottom-item-text" data-id="{{item.store_id}}" catchtap='intoStore'>@{{item.store_name}}</cover-view>
+              <cover-view class="left-bottom-item-text-small">{{item.store.address}}</cover-view>
+            </cover-view>
+             <cover-view class="right-bar-cover">
+              <cover-image class="round-logo-medium" src="{{item.store.logo}}" data-id="{{item.store_id}}" catchtap='intoStore'></cover-image>
+              <cover-image class="round-logo-small" src="/image/love_fill.png"></cover-image>
+              <cover-image class="round-logo-small" src="/image/message.png"></cover-image>
+              <cover-image class="round-logo-small" src="/image/wechat_friend.png"></cover-image>
+            </cover-view> 
+            <cover-view wx:if="{{play_id != item.id && (isMoving || isPlayOk === false)}}" >
+              <cover-image style="width:{{'100%'}};height:{{videoHeight}};min-height:99%;" src="{{item.cover_picture}}" bindtap="videoPlay" />
+            </cover-view>
+          </video>
+        </swiper-item>
+      </block>
+    </swiper>
+    <cover-view wx:if="{{showBottomBar}}" class="bottom-bar-cover">
+      <cover-image class="bottom-bar-item" src="/image/index_icon.png"></cover-image>
+      <cover-image class="bottom-bar-item" src="/image/logo.png" catchtap="toCouponPage"></cover-image>
+      <cover-image class="bottom-bar-item" src="/image/user_icon.png" catchtap="toHomePage"></cover-image>
+    </cover-view>
+  </view>
+</view>

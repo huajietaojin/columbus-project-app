@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="video-area">
+    <video bindtap="handletap" controls="{{false}}" style="width:{{'100%'}};height:{{videoHeight}};min-height:99%;" autoplay="{{false}}" loop="{{true}}" id="myVideo" show-center-play-btn="{{false}}" src="{{videoUrl}}" muted="{{false}}" binderror="videoErrorCallback"
+      objectFit="cover">
+
+      <cover-view wx:if="{{isPlaying === false}}" class="cover-play">
+        <cover-image class="play-icon" src="/image/play.png" bindtap="videoPlay" />
+      </cover-view>
+    </video>
+  </view>
+</view>

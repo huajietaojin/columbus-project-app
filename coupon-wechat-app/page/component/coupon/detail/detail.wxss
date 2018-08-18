@@ -1,0 +1,138 @@
+@import '../../../common/common.wxss';
+
+page, .main {
+  height: auto;
+}
+.main.detail {
+  padding-left:36rpx;
+  padding-right:36rpx;
+}
+.detail .card-list {
+  margin-top: 35rpx;
+  height: 370rpx; 
+}
+.detail-top {
+  margin-top: 24rpx;
+  height: 140rpx;
+}
+.detail-top-item {
+  width: 50%;
+  float: left;
+}
+.detail-top-txt{
+  width: 100%;
+  text-align: center;
+  line-height: 70rpx;
+  height: 70rpx;
+  font-size: 27rpx;
+}
+.org {
+  color: #ffb608;
+  font-size: 30rpx;
+}
+.expire-at {
+  float: right;
+  color: #333333;
+  font-weight: normal;
+}
+.detail-btn-con {
+  height: 160rpx;
+  line-height: 160rpx;
+  text-align: center;
+}
+.get-coupon {
+  width: 330rpx;
+  line-height: 2.555556;
+  border: 1px solid #ffb608;
+  color: #ffb608;
+  text-align: center;
+  font-size: 32rpx;
+  border-radius: 10rpx;
+  display: inline-block;
+}
+.rule-content {
+  max-height: 600rpx;
+  overflow-y: auto;
+}
+.detail-tab-item {
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #e7e7e7;
+  font-size: 30rpx;
+  position: relative;
+  color: #353535;
+}
+.icon-right {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  right: 0;
+  top: 35rpx;
+}
+.modal-content-con{
+  background-color: #ffffff;
+  margin: 0 70rpx;
+  padding: 30rpx;
+  border-radius: 10rpx;
+}
+.modal-content-hd {
+  font-size: 34rpx;
+  line-height: 40rpx;
+  margin-bottom: 20rpx;
+}
+.modal-content-item {
+  font-size: 26rpx;
+  line-height: 40rpx;
+  margin-bottom: 20rpx;
+  color: #353535;
+  text-align: left;
+}
+.modal-content-store {
+  margin-bottom: 20rpx;
+}
+.item-name {
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color: #000000;
+}
+.item-address {
+  line-height: 40rpx;
+  font-size: 26rpx;
+  color: #8e8e8e;
+}
+.modal-content-close {
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  margin-top: 68rpx;
+}
+.icon-close {
+  width: 56rpx;
+  height: 56rpx;
+  display: inline-block;
+}
+
+/* 底部转发按钮 */
+.sheet-button {
+  padding:0;
+  line-height: 100rpx;
+}
+.sheet-item-button {
+  background-color: #fff;
+  position: relative;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 18px;
+}
+.sheet-button-cancel {
+  padding:0;
+  line-height: 60rpx;
+}
+
+.icon-enable {
+  width: 96rpx;
+  height: 96rpx;
+  position: absolute;
+  right: 24rpx;
+  top: 24rpx;
+}

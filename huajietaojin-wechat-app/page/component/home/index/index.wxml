@@ -1,0 +1,47 @@
+<view class="common">
+  <view class="header">
+    <view class="userinfo">
+      <block wx:if="{{hasUserInfo}}">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <text class="userinfo-nickname" bindtap="updateUser">{{userInfo.nickName}}</text>
+      </block>
+      <button class="userinfo-avatar" wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo">点我显示头像</button>
+    </view>
+  </view>
+
+  <view class="section-scope bind">
+    <view class="section-item bind" bindtap="bindPhone" wx:if="{{!hasBindPhone}}">
+      <image class="iphone-icon" src="/image/iphone.png"></image>
+      <text class="item-text" style="padding-left:70rpx;">登录后可以解锁更多功能，马上试试</text>
+      <image class="direction-right" src="/image/right.png"></image>
+    </view>
+  </view>
+
+  <view class="section-scope coupon">
+    <navigator url="../my-coupon/my-coupon">
+      <view class="section-item">
+        <image class="direction-left" src="/image/ic_coupon_my.png"></image>
+        <text class="item-text">现金券</text>
+        <image class="direction-right" src="/image/right.png"></image>
+      </view>
+    </navigator>
+  </view>
+
+  <view class="section-scope mb">
+    <navigator url="../my-consume/my-consume">
+      <view class="section-item">
+        <image class="direction-left" src="/image/ic_list.png"></image>
+        <text class="item-text">消费记录</text>
+        <image class="direction-right" src="/image/right.png"></image>
+      </view>
+    </navigator>
+  </view>
+
+  <view class="section-scope mb">
+    <view class="section-item" bindtap='intoBusiness'>
+      <image class="direction-left" src="/image/ic_store_my.png"></image>
+      <text class="item-text">我是商家</text>
+      <image class="direction-right" src="/image/right.png"></image>
+    </view>
+  </view>
+</view>

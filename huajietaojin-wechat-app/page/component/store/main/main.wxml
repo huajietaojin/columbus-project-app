@@ -1,0 +1,130 @@
+<view class="main">
+  <view class="store-content">
+    <view class="store-content-box">
+      <view class="store-content-logo-box">
+        <view class="store-content-logo-area">
+          <image class="store-content-logo-image" src="{{store.logo}}"></image>
+        </view>
+        <view class="follow-btn">感兴趣</view>
+      </view>
+      <view class="store-content-title-box">
+        <view class="store-content-title-text ellipsis">{{store.name}}</view>
+      </view>
+
+      <view class="store-content-contact-box">
+        <view class="store-content-contact-text" catchlongpress="onClickPhone">
+          联系：<text selectable="{{true}}">{{store.contact}}</text>
+        </view>
+        <view>
+          <navigator url="../list/list?storeId={{storeId}}">
+            <view class="see-product-btn">
+              <text>查看商品</text>
+              <image class="right-icon" src="/image/right.png"></image>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+  <view class="store-box">
+    <view class="store-box-item">
+      <!-- <image src="/image/ic_position.png" class="address-icon"></image> -->
+      <view class="store-address-text">地址：{{store.address}}</view>
+    </view>
+  </view>
+
+  <!-- tag page -->
+  <view class="store-info-tab-box">
+    <view class="store-info-tab-nav {{curIndex === 0 ?'on':''}}" bindtap="bindTap" data-index="0">{{hasVideos ? "作品" : "动态"}}</view>
+    <view class="store-info-tab-nav {{curIndex === 1 ?'on':''}}" bindtap="bindTap" data-index="1">优惠券</view>
+    <view class="store-info-tab-nav {{curIndex === 2 ?'on':''}}" bindtap="bindTap" data-index="2">展示</view>
+    <view class="store-info-display-area">
+      <view wx:if="{{curIndex === 0}}">
+        <view class="store-video-list">
+          <block wx:for="{{videos}}" wx:key="{{index}}">
+            <view class="store-video-content" data-id="{{item.id}}" data-url="{{item.video_url}}" bindtap="toVideoPage">
+              <image src="{{item.cover_picture}}" class="store-video-image" mode="aspectFill" lazy-load="true" />
+              <image src="/image/play_white_small.png" class="video-play-icon-small" />
+            </view>
+          </block>
+          <view class="no-content-tip" wx:if="{{!hasVideos}}">
+            暂无{{hasVideos ? "作品" : "动态"}}
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{curIndex === 1}}">
+        <view class="store-coupon-list">
+          <scroll-view scroll-y="true" class="scroll-view-area" scroll-with-animation="true" enable-back-to-top="true">
+            <block wx:for="{{coupons}}" wx:key="{{index}}">
+              <view>
+                <view class="card-large">
+                  <navigator url="../../coupon/detail/detail?couponId={{item.id}}">
+                    <view class="card-list">
+                      <view class="card-item">
+                        <image wx:if="{{item.type === 1}}" class="card-item-image" mode="aspectFill" lazy-load="true" src="/image/bg_cashcoupons.png" />
+                        <image wx:if="{{item.type === 2}}" class="card-item-image" mode="aspectFill" lazy-load="true" src="/image/bg_discount_coupons.png" />
+                        <image class="card-item-logo" mode="aspectFill" lazy-load="true" src="{{item.picture}}" />
+                        <view class="card-store-title">{{item.store_name}}</view>
+                        <view class="card-line"></view>
+                        <view wx:if="{{item.type === 1}}" class="card-coupon-num">¥{{item.content}}</view>
+                        <view wx:if="{{item.type === 2}}" class="card-coupon-num">{{item.content}}折</view>
+                        <view wx:if="{{item.type === 1}}" class="card-coupon-txt">现金券</view>
+                        <view wx:if="{{item.type === 2}}" class="card-coupon-txt">折扣券</view>
+                      </view>
+                    </view>
+                  </navigator>
+                </view>
+              </view>
+            </block>
+          </scroll-view>
+          <view class="no-content-tip" wx:if="{{!hasCoupons}}">
+            暂无优惠券
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{curIndex === 2}}">
+        <view class="store-picture-list">
+          <scroll-view scroll-y="true" class="scroll-view-area" scroll-with-animation="true" enable-back-to-top="true">
+            <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+              <view>
+                <view class="store-image-content">
+                  <image src="{{item}}" class="store-image" mode="aspectFill" lazy-load="true" />
+                </view>
+              </view>
+            </block>
+          </scroll-view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="mask" wx:if="{{showGetUserModal}}"></view>
+  <view class="modal-box" wx:if="{{showGetUserModal}}">
+    <view class="modal-content">
+      <view class="modal-content-con">
+        <view class="rule-content" style='text-align:center'>
+          <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 点我验证是否为机器人 </button>
+          <view wx:else>请升级微信版本</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="float-home-btn" bindtap="onHomeBtnShow">
+    <image class="float-home-btn-image" src="/image/index.png"></image>
+  </view>
+
+  <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange">
+    <block wx:for="{{actionSheetItems}}" wx:key="{{index}}">
+      <action-sheet-item wx:if="{{index == 0}}" class="sheet-button">
+        <button class="sheet-item-button" open-type="share" hover-class="btn-hover">{{item.txt}}</button>
+      </action-sheet-item>
+      <action-sheet-item bindtap="{{item.bindtap}}" class="sheet-button" wx:else>{{item.txt}}</action-sheet-item>
+    </block>
+    <action-sheet-cancel class="sheet-button-cancel">取消</action-sheet-cancel>
+  </action-sheet>
+</view>

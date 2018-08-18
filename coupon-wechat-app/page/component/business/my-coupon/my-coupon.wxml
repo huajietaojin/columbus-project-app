@@ -1,0 +1,28 @@
+<view class="main">
+  <view class="stores">
+  <view class="stores-hd">
+    <text>添加现金券，请登录 www.huajietaojin.cn 进行操作！</text>
+  </view>
+  <block wx:for="{{list}}" wx:key="{{index}}">
+    <view class="stores-item">
+      <view class="stores-item-name ellipsis">
+        <text>{{item.store_name}}</text>
+      </view>
+      <view class="stores-item-text">
+        <text wx:if="{{item.type==1}}" class="color-1">(现金券)</text>
+        <text wx:if="{{item.type==2}}" class="color-2">(折扣券)</text>
+      </view>
+      <view class="stores-item-text">
+        <text wx:if="{{item.type==1}}">优惠金额：{{item.content}}元</text>
+        <text wx:if="{{item.type==2}}">优惠折扣：{{item.content}}折</text>
+      </view>
+      <view class="stores-item-text">
+        <text>开始时间：{{item.start_at}}</text>
+      </view>
+      <view class="stores-item-text">
+        <text>截止时间：{{item.expire_at}}</text>
+      </view>
+    </view>
+  </block>
+  </view>
+</view>

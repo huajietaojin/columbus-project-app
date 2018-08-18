@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "现金券数据",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "ec-canvas": "../../../../ec-canvas/ec-canvas"
+  }
+}

@@ -1,0 +1,22 @@
+<view class="main">
+  <view class="modal-box">
+    <view class="modal-content">
+      <view class="modal-content-hd">
+        <text class="modal-content-title-text">商家登录</text>
+        <image class="modal-close" src="/image/ico_vip.png"></image>
+      </view>
+      <view class="modal-content-item">
+        <input type="number" value="{{login.mobile}}" bindinput="bindLoginMobile" class="input-text" placeholder="请输入手机号" />
+      </view>
+      <view class="modal-content-item">
+        <input type="text" value="{{login.password}}" bindinput="bindLoginPassword" class="input-text" password="true" placeholder="请输入密码" />
+      </view>
+      <view class="modal-content-item" style="margin-top:30rpx;">
+        <button type="primary" bindtap='login'> 登 录 </button>
+      </view>
+      <view class="modal-content-item" style="margin-top:20rpx;text-align: right;font-size:32rpx;height:40rpx;">
+        <text class="color-red" bindtap="toRegisterPage" data-index="1">注册新账号</text>
+      </view>
+    </view>
+  </view>
+</view>

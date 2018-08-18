@@ -1,0 +1,13 @@
+.play-icon-cover {
+  position: absolute;
+  top: 40%;
+  width: 76rpx;
+  height: 76rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.play-icon {
+  width: 72rpx;
+  height: 72rpx;
+}

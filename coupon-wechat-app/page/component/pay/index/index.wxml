@@ -1,0 +1,41 @@
+<view class="main">
+  <view class="pay-box">
+    <view class="pay-box-store">
+      <image src="{{couponItem.picture}}" class="store-icon" mode="aspectFill"></image>
+      <view class="pay-box-text ellipsis">{{storeName}}</view>
+      <view class="pay-box-type" wx:if="{{couponItem.type == 1}}">现金券</view>
+      <view class="pay-box-type" wx:if="{{couponItem.type == 2}}">打折券</view>
+    </view>
+    <view class="pay-box-con">
+      <form bindsubmit="onPay" report-submit="true">
+        <view class="pay-money-text">当前消费金额</view>
+        <view class="pay-money-box">
+          <text class="money-icon">¥</text>
+          <input class="money-input" name="originPrice"  bindinput="bindInputMoney"  type="digit" value="{{originPrice}}" />
+        </view>
+        <view class="pay-money-box-bottom"></view>
+        <view class="pay-discount-tip">满{{couponItem.base_price}}元可享受直接减免优惠</view>
+        <!-- <view class="pay-discount-text">优惠</view>
+        <view class="pay-discount-box">
+          <text wx:if="{{couponItem.type == 1}}">优惠：{{couponItem.content}}元</text>
+          <text wx:if="{{couponItem.type == 2}}">优惠：{{couponItem.content}}折</text>
+        </view>
+        <view class="pay-discount-box-bottom"></view> -->
+
+        <!-- <view class="pay-actual">
+          <text class="money-icon-actual">¥</text>
+          <text class='pay-actual-num'>{{finalPrice}}</text>
+        </view> -->
+
+        <!-- <button disabled="{{disabled}}" class="pay-money-btn" formType="submit">计 算</button> -->
+
+        <view class="coupute-btn-con">
+          <button class="coupute-price" formType="submit" loading="{{loading}}" >
+            计 算 优 惠
+          </button>
+        </view>
+      </form>
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,27 @@
+<view class="main">
+  <view class="list-box">
+    <view class="list-box-item">
+      <view class="list-item-hd">
+        <image src="{{detail.store_logo}}" class="logo"></image>
+        <text class="store-name">{{detail.store_name}}</text>
+      </view>
+      <view class="list-item-bd">
+        <view class="item-detail">
+          <text class="item-detail-label">商户名称</text> {{detail.store_name}}
+        </view>
+        <view class="item-detail">
+          <text class="item-detail-label">商品价格</text> {{detail.origin_price}}
+        </view>
+        <view class="item-detail">
+          <text class="item-detail-label">优惠金额</text> {{detail.final_cut}}
+        </view>
+        <view class="item-detail">
+          <text class="item-detail-label">实付金额</text> {{detail.final_price}}
+        </view>
+        <view class="item-detail">
+          <text class="item-detail-label">交易时间</text> {{date}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

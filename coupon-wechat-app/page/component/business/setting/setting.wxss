@@ -1,0 +1,79 @@
+@import '../../../common/common.wxss';
+page,.main{
+    height: 100%;
+    background-color: #f2f2f4;
+}
+.firm {
+  padding: 40rpx 30rpx;
+}
+.firm-tip-hd {
+  color: #a1a1a1;
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.firm-box-hd {
+  position: relative;
+  height: 120rpx;
+  line-height: 120rpx;
+  background-color: #fbfbfb;
+  padding: 30rpx 0;
+}
+.firm-box-text {
+  font-size: 36rpx;
+  padding-left:40rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 500rpx;
+}
+.icon-vip{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: 40rpx;
+  top: 35rpx;
+}
+.firm-box-bd {
+  background-color: #ffffff;
+  padding: 40rpx;
+  margin-bottom: 60rpx;
+}
+.firm-box-item{
+  color: #969696;
+  font-size: 30rpx;
+  line-height: 60rpx;
+}
+.firm-box-item-l-address {
+  float: left;
+}
+.firm-box-item-r{
+  float: right;
+}
+.firm-box-item-r-address {
+  padding-left: 146rpx;
+  text-align: right;
+}
+.firm-license-picture {
+  height: 320rpx;
+  color: #969696;
+  font-size: 30rpx;
+  position: relative;
+}
+.firm-img {
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 10rpx;
+  position: absolute;
+  right: 0;
+  top: 5rpx;
+}
+.btn {
+  font-size: 36rpx;
+  line-height: 2.5555;
+  border-radius: 10rpx;
+  border:1rpx solid #179e16;
+  text-align: center;
+  color: #179e16;
+  background-color: #ffffff;
+}

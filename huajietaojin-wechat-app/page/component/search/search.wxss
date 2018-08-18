@@ -1,0 +1,169 @@
+@import '../../common/common.wxss';
+
+/** 以下是搜索框的 we-ui 样式-*/
+.weui-search-bar {
+  position: relative;
+  padding: 8px 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  box-sizing: border-box;
+  background-color: #efeff4;
+  border-top: 1rpx solid #d7d6dc;
+  border-bottom: 1rpx solid #d7d6dc;
+}
+
+.weui-icon-search {
+  margin-right: 8px;
+  font-size: inherit;
+}
+
+.weui-icon-search_in-box {
+  position: absolute;
+  left: 10px;
+  top: 7px;
+}
+
+.weui-search-bar__text {
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.weui-search-bar__form {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: auto;
+  flex: auto;
+  border-radius: 5px;
+  background: #fff;
+  border: 1rpx solid #e6e6ea;
+}
+
+.weui-search-bar__box {
+  position: relative;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.weui-search-bar__input {
+  height: 28px;
+  line-height: 28px;
+  font-size: 14px;
+}
+
+.weui-icon-clear {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 7px 8px;
+  font-size: 0;
+}
+
+.weui-search-bar__label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  border-radius: 3px;
+  text-align: center;
+  color: #9b9b9b;
+  background: #fff;
+  line-height: 28px;
+}
+
+.weui-search-bar__cancel-btn {
+  margin-left: 10px;
+  line-height: 28px;
+  color: #09bb07;
+  white-space: nowrap;
+}
+
+/* 列表 */
+
+.newest-title {
+  width: 100%;
+  padding: 30rpx 0;
+  height: 30rpx;
+  color: #ab956d;
+  text-align: center;
+}
+
+
+.newest-box {
+  padding: 0 40rpx;
+}
+
+.newest-box .newest-list {
+  display: inline-block;
+  width: 325rpx;
+  height: 325rpx;
+  margin: 0 20rpx 20rpx 0;
+  border-radius: 10px;
+  text-align: center;
+  background: #f5f6f5;
+}
+
+.newest-box .newest-list:nth-child(2n) {
+  margin-right: 0;
+}
+
+.newest-box .newest-list image {
+  width: 175rpx;
+  height: 175rpx;
+  margin: 20rpx 0 10rpx;
+}
+
+.newest-box .newest-list .newest-text {
+  font-size: 32rpx;
+}
+
+/* 位置 */
+.servers-box {
+  position: fixed;
+  left: 30rpx;
+  top: 24rpx;
+  z-index: 200;
+}
+.servers-icon{
+  width: 24rpx;
+  height: 24rpx;
+  margin-top: 6rpx;
+  margin-left: 28rpx;
+  margin-right: 8rpx;
+}
+.servers-text {
+  display: inline-block;
+  height: 36rpx;
+  line-height: 36rpx;
+  font-size: 28rpx;
+  color: #666666;
+}
+
+/* 滑块 */
+.scroll-view-area {
+  height: 100%;
+  width: 100%;
+}
+
+.scroll-view-item {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+}
+
+.scroll-sheet {
+  white-space: nowrap;
+  display: flex;
+}
+
+.scroll-view-sheet {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+}

@@ -1,0 +1,74 @@
+<view class="main">
+  <view class="con-hd">
+    <view class="con-hd-txt">
+      今日收款{{trading.total}}笔，合计
+    </view>
+    <view class="con-hd-money">
+      <text class="money-icon">￥</text>
+      <text class="money-num">{{trading.amount}}</text>
+    </view>
+    <view class="con-hd-list">
+      <view class="line"></view>
+      <view class="list-item" bindtap='intoTrading'>
+        <view class="list-item-img">
+          <image class="icon-img" src="/image/ic_recored.png"></image>
+        </view>
+        <view class="list-item-txt">
+          收款记录
+        </view>
+      </view>
+      <view class="list-item" bindtap='intoReport'>
+        <view class="list-item-img">
+          <image class="icon-img" src="/image/ic_report.png"></image>
+        </view>
+        <view class="list-item-txt">
+          经营报表
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="con-bd">
+    <view class="con-bd-list">
+      <view class="line bd"></view>
+      <view class="list-item bd" bindtap='intoMyStores'>
+        <view class="list-item-img">
+          <image class="icon-img" src="/image/ic_store.png"></image>
+        </view>
+        <view class="list-item-txt bd">
+          我的门店
+        </view>
+      </view>
+      <view class="list-item bd" bindtap='intoMyCoupon'>
+        <view class="list-item-img">
+          <image class="icon-img" src="/image/ic_coupon.png"></image>
+        </view>
+        <view class="list-item-txt bd">
+          我的现金券
+        </view>
+      </view>
+    </view>
+    <view class="con-bd-list">
+      <view class="line bd"></view>
+      <!--统计数据选择类型 -->
+      <view class="list-item bd">
+        <picker bindchange="bindPickerChange" value="{{statisticIndex}}" range="{{statisticArray}}">
+          <view class="list-item-img">
+            <image class="icon-img" src="/image/ic_total.png"></image>
+          </view>
+          <view class="list-item-txt bd">
+            统计数据
+          </view>
+        </picker>
+      </view>
+      <view class="list-item bd" bindtap='intoSetting'>
+        <view class="list-item-img">
+          <image class="icon-img" src="/image/ico_set.png"></image>
+        </view>
+        <view class="list-item-txt bd">
+          企业设置
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

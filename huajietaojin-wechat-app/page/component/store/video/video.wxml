@@ -1,0 +1,16 @@
+<!--page/component/store/video/video.wxml-->
+<view class="container">
+
+  <video catchtap="clickVideo" bindplay="onPlayReady" binderror="onPlayError" controls="{{false}}" style="width:{{'100%'}};height:{{videoHeight}};min-height:99%;" autoplay="{{false}}" loop="{{true}}" id="myVideo" show-center-play-btn="{{false}}" src="{{video_url}}"
+    muted="{{false}}" objectFit="cover">
+
+    <cover-view wx:if="{{showPoster}}">
+      <cover-image catchtap="clickCoverImage" mode="aspectFit" style="width:{{'100%'}};height:{{videoHeight}};min-height:99%;" src="{{cover_picture}}" />
+    </cover-view>
+
+    <cover-view wx:if="{{isPlaying == false}}" class="play-icon-cover">
+      <cover-image catchtap="clickHandStop" class="play-icon" src="/image/play_gray.png" bindtap="videoPlay" />
+    </cover-view>
+
+  </video>
+</view>

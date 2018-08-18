@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "交易数据",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "ec-canvas": "../../../../ec-canvas/ec-canvas"
+  }
+}

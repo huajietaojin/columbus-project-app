@@ -1,0 +1,121 @@
+<!-- <view class="title-bar-white" style="background-color: #fff;top: {{statusBarHeight||0}}px;">
+  <image class="title-back-icon" mode="aspectFill" src="/image/back_black.png" catchtap='goBack'></image>
+  <view class="title-name-text-black">
+    <text>{{titleName || '现金券详情'}}</text>
+  </view>
+</view> -->
+<view class="main detail">
+  <view class="card-out">
+    <view class="card-list">
+      <view class="card-item">
+        <image wx:if="{{couponItem.type === 1}}" class="card-item-image" mode="aspectFill" lazy-load="true" src="/image/bg_cashcoupons.png" />
+        <image wx:if="{{couponItem.type === 2}}" class="card-item-image" mode="aspectFill" lazy-load="true" src="/image/bg_discount_coupons.png" />
+        <image class="card-item-logo" mode="aspectFill" lazy-load="true" src="{{couponItem.picture}}" />
+        <view class="card-store-title">{{couponItem.store_name}}</view>
+        <view class="card-line"></view>
+        <view wx:if="{{couponItem.type === 1}}" class="card-coupon-num">¥{{couponItem.content}}</view>
+        <view wx:if="{{couponItem.type === 2}}" class="card-coupon-num">{{couponItem.content}}折</view>         
+        <view wx:if="{{couponItem.type === 1}}" class="card-coupon-txt">现金券</view>
+        <view wx:if="{{couponItem.type === 2}}" class="card-coupon-txt">折扣券</view>
+        <image wx:if="{{enableUseCoupon}}" class="icon-enable" mode="aspectFill" lazy-load="true" src="/image/ic_enable.png" />
+      </view>
+    </view>
+  </view>
+
+  <view class="detail-top">
+    <view class="detail-top-item">
+      <view class="detail-top-txt">
+        使用次数
+      </view>
+      <view class="detail-top-txt org">
+        {{couponItem.usage_count}}
+      </view>
+    </view>
+    <view class="detail-top-item">
+      <view class="detail-top-txt">
+        发行门店
+      </view>
+      <view class="detail-top-txt org"  bindtap="toStorePage">
+        查看
+      </view>
+    </view>
+  </view>
+  <view class="detail-btn-con">
+    <view class="get-coupon"  bindtap="useCoupon">
+      使 用
+    </view>
+  </view>
+
+  <view class="detail-tab-item"  bindtap="openUseModal">
+    使用规则
+    <image src="/image/right.png" class="icon-right"></image>
+  </view>
+  <view class="detail-tab-item"  bindtap="openStoreModal">
+    通用门店
+    <image src="/image/right.png" class="icon-right"></image>
+  </view>
+  <view class="detail-tab-item">
+    有效期  <text class="expire-at">{{startAt}} 至 {{expireAt}}</text>
+  </view>
+  <view class="mask" wx:if="{{showModal}}"></view>
+   <view class="modal-box" wx:if="{{showModal}}">
+    <view class="modal-content">
+      <view class="modal-content-con" wx:if="{{showUseModal}}">
+        <view class="modal-content-hd">
+          <text>使用规则：</text>
+        </view>
+        <view class="rule-content">
+        <block wx:for="{{couponItem.effect_rule_values}}" wx:key="{{index}}">
+          <view class="modal-content-item">
+            <text>{{item}}</text>
+          </view>
+        </block>
+        </view>
+      </view>
+
+      <view class="modal-content-con" wx:if="{{showStoreModal}}">
+        <view class="modal-content-hd">
+          <text>通用门店：</text>
+        </view>
+        <view class="rule-content">
+        <block wx:for="{{couponItem.effect_store_list}}" wx:key="{{index}}">
+          <view class="modal-content-store">
+            <view class="item-name">{{item.name}}</view>
+            <view class="item-address">{{item.address}}</view>
+          </view>
+        </block>
+        </view>
+      </view>
+
+      <view class="modal-content-close">
+        <image class="icon-close"  bindtap="closeModal"  mode="aspectFill" lazy-load="true" src="/image/ic_close.png" />
+      </view>
+    </view>
+   </view>
+
+  <view class="mask" wx:if="{{showGetUserModal}}"></view>
+  <view class="modal-box" wx:if="{{showGetUserModal}}">
+    <view class="modal-content">
+      <view class="modal-content-con">
+        <view class="rule-content" style='text-align:center'>
+          <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 点我验证是否为机器人 </button>
+          <view wx:else>请升级微信版本</view>
+        </view>
+      </view>
+      </view>
+   </view>
+
+  <view class="float-home-btn" bindtap="onHomeBtnShow">
+    <image class="float-home-btn-image" src="/image/index.png"></image>
+  </view>
+
+   <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange">
+    <block wx:for="{{actionSheetItems}}" wx:key="{{index}}">
+      <action-sheet-item wx:if="{{index == 0}}" class="sheet-button">
+        <button class="sheet-item-button" open-type="share" hover-class="btn-hover">{{item.txt}}</button>
+      </action-sheet-item>
+      <action-sheet-item bindtap="{{item.bindtap}}"  class="sheet-button" wx:else>{{item.txt}}</action-sheet-item>
+    </block>
+    <action-sheet-cancel  class="sheet-button-cancel">取消</action-sheet-cancel>
+  </action-sheet> 
+</view>

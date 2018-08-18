@@ -1,0 +1,56 @@
+<view class="main">
+  <view>
+    <view class="goods-tab-nav {{curIndex === 0 ?'on':''}}" bindtap="bindTap" data-index="0">未使用（{{num1}}）</view>
+    <view class="goods-tab-nav {{curIndex === 1 ?'on':''}}" bindtap="bindTap" data-index="1">已使用（{{num2}}）</view>
+    <view class="goods-content">
+      <view wx:if="{{curIndex === 0}}">
+       <scroll-view scroll-y="true" class="scroll-view-area" scroll-with-animation="true" enable-back-to-top="true">
+          <block wx:for="{{cards1}}" wx:key="{{index}}">
+            <view class="card-out">
+            <navigator url="../../coupon/detail/detail?couponId={{item.coupon_id}}">
+              <view class="card-item">
+                <image wx:if="{{item.coupon_type === 1}}" class="card-item-image" mode="aspectFill" lazy-load="true" src="/image/bg_cashcoupons.png" />
+                <image wx:if="{{item.coupon_type === 2}}" class="card-item-image" mode="aspectFill" lazy-load="true" src="/image/bg_discount_coupons.png" /> 
+                <image class="card-item-logo" mode="aspectFill" lazy-load="true" src="{{item.store_logo}}" />
+                <view class="card-store-title">{{item.store_name}}</view>
+                <view class="card-line"></view>
+                <view wx:if="{{item.coupon_type === 1}}" class="card-coupon-num">¥{{item.coupon_content}}</view>
+                <view wx:if="{{item.coupon_type === 2}}" class="card-coupon-num">{{item.coupon_content}}折</view>         
+                <view wx:if="{{item.coupon_type === 1}}" class="card-coupon-txt">现金券</view>
+                <view wx:if="{{item.coupon_type === 2}}" class="card-coupon-txt">折扣券</view>
+              </view>
+            </navigator>
+            </view>
+          </block>
+          <view class="btm-tip" wx:if="{{noCards1}}" >
+            暂无优惠券内容！
+          </view>
+        </scroll-view>
+      </view>
+
+      <view wx:if="{{curIndex === 1}}">
+        <scroll-view scroll-y="true" class="scroll-view-area" scroll-with-animation="true" enable-back-to-top="true">
+          <block wx:for="{{cards2}}" wx:key="{{index}}">
+            <view class="card-out">
+              <view class="card-item">
+                <image wx:if="{{item.coupon_type === 1}}" class="card-item-image" mode="aspectFill" lazy-load="true" src="/image/bg_cashcoupons.png" />
+                <image wx:if="{{item.coupon_type === 2}}" class="card-item-image" mode="aspectFill" lazy-load="true" src="/image/bg_discount_coupons.png" /> 
+                <image class="card-item-logo" mode="aspectFill" lazy-load="true" src="{{item.store_logo}}" />
+                <view class="card-store-title">{{item.store_name}}</view>
+                <view class="card-line"></view>
+                <view wx:if="{{item.coupon_type === 1}}" class="card-coupon-num">¥{{item.coupon_content}}</view>
+                <view wx:if="{{item.coupon_type === 2}}" class="card-coupon-num">{{item.coupon_content}}折</view>         
+                <view wx:if="{{item.coupon_type === 1}}" class="card-coupon-txt">现金券</view>
+                <view wx:if="{{item.coupon_type === 2}}" class="card-coupon-txt">折扣券</view>
+                <image class="icon-use" mode="aspectFill" lazy-load="true" src="/image/ic_used.png" />
+              </view>
+            </view>
+          </block>
+          <view class="btm-tip" wx:if="{{noCards2}}" >
+            暂无优惠券内容！
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</view>

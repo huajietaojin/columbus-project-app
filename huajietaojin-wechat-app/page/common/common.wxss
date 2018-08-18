@@ -1,0 +1,300 @@
+page{
+    background-color: #fcfcfc;
+    font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
+    font-size: 32rpx;
+}
+.navigator-hover{
+    background: none;
+}
+
+/* card ljq */
+.card-out {
+  margin-top:20rpx; 
+  margin-bottom:20rpx;
+}
+.card-large {
+    background-color: #ffffff;
+    box-shadow: 1px 1px 13rpx #dedede;
+    position: relative;
+    padding: 25rpx 36rpx;
+    min-height: 160rpx;
+}
+
+.card-large-image {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 6rpx;
+    float:left;
+}
+.card-content {
+  padding-left:190rpx;
+}
+
+.card-list {
+  margin-top: 18rpx;
+}
+.card-item {
+  position: relative;
+}
+.card-item.scroll {
+  margin: 0 36rpx;
+}
+.card-item-image {
+  width: 680rpx;
+  height: 370rpx;
+}
+.card-item-logo {
+  width: 83rpx;
+  height: 83rpx;
+  border: 2rpx solid #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 46rpx;
+  top: 20rpx;
+}
+.card-store-title {
+  font-size: 36rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  position: absolute;
+  left: 150rpx;
+  top: 40rpx;
+  color: #fff;
+  width: 500rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  text-align:left;
+}
+.card-line {
+  width: 612rpx;
+  border:1rpx dashed #fff;
+  position: absolute;
+  top: 128rpx;
+  left: 32rpx;
+  right: 32rpx;
+}
+.card-coupon-num {
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  font-size: 100rpx;
+  color: #fff;
+  position: absolute;
+  top: 155rpx;
+  left: 32rpx;
+  right: 32rpx;
+}
+.card-coupon-txt {
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 33rpx;
+  color: #f7f2f2;
+  position: absolute;
+  top: 275rpx;
+  left: 32rpx;
+  right: 32rpx;
+}
+
+.card-medium {
+    border: 0px solid #ffffff;
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-shadow: 5px 4px 14px #dedede;
+    position: relative;
+    padding: 0px;
+    height: 170px;
+}
+.card-small {
+    border: 0px solid #ffffff;
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-shadow: 4px 4px 14px #9f9f9f;
+    position: relative;
+    padding: 0px;
+    height: 140px;
+}
+
+.card-medium-image {
+    width: 100%;
+    height: 170px;
+    border-radius: 6px;
+    border: 0px;
+}
+.card-small-image {
+    width: 100%;
+    height: 140px;
+    border-radius: 6px;
+    border: 0px;
+}
+
+.top-right-info {
+    float: left;
+    color: #000000;
+    position: absolute;
+    right: 0;
+    top: 30rpx;
+    z-index: 1;
+    font-size: 12px;
+    background-color: yellow;
+    border-radius: 14rpx 0 0 14rpx;
+    padding-top: 10rpx;
+    padding-bottom: 6rpx;
+    padding-left: 22rpx;
+    padding-right: 18rpx;
+}
+
+.middle-left-info {
+    float: left;
+    color: #e9093e;
+    position: absolute;
+    left: 0;
+    top: 120rpx;
+    z-index: 1;
+    font-size: 24px;
+    background-color: yellow;
+    border-radius: 0rpx 50rpx 50rpx 0rpx;
+    padding-top: 15rpx;
+    padding-bottom: 15rpx;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+}
+
+.middle-left-info-green {
+    float: left;
+    color: #ffffff;
+    position: absolute;
+    left: 0;
+    top: 40rpx;
+    z-index: 1;
+    font-size: 14px;
+    background-color: green;
+    border-radius: 0rpx 14rpx 14rpx 0rpx;
+    padding-top: 10rpx;
+    padding-bottom: 8rpx;
+    padding-left: 22rpx;
+    padding-right: 18rpx;
+}
+
+.bottom-info {
+    float: left;
+    color: #121212;
+    position: absolute;
+    left: 0rpx;
+    bottom: 0rpx;
+    z-index: 1;
+    font-size: 12px;
+    background-color: #ffffff;
+    padding-top: 20rpx;
+    padding-bottom: 18rpx;
+    width: 100%;
+    border-top-left-radius:0;
+    border-top-right-radius:0;
+    border-bottom-right-radius:6px;
+    border-bottom-left-radius:6px;
+    display: flex;
+    align-items: center;
+}
+
+/* 浮动按钮 */
+.float-home-btn {
+position: fixed;
+bottom: 30rpx;
+right: 20rpx;
+width: 80rpx;
+height: 80rpx;
+border-radius: 50%;
+box-shadow: 4px 4px 14px #9f9f9f;
+z-index: 1;
+}
+
+.float-home-btn-image {
+position: fixed;
+bottom: 40rpx;
+right: 30rpx;
+width: 60rpx;
+height: 60rpx;
+z-index: 2;
+}
+
+.store-title {
+    color: #000;
+    font-size: 30rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+.store-notice {
+    color: #757575;
+    font-size: 25rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+.ellipsis{
+  overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.card-type {
+  height: 50rpx;
+  line-height: 50rpx;
+  margin-top: 10rpx;
+}
+.coupon-icon {
+  text-align: center;
+  height: 40rpx;
+  line-height: 40rpx;
+  border-radius: 20rpx;
+  color: #fff;
+  font-size: 24rpx;
+  width: 112rpx;
+  display: inline-block;
+  margin-right: 30rpx;
+}
+.bg-cash {
+  background-color: #7dd0c3;
+}
+.bg-discount {
+  background-color: #f7597a;
+}
+
+/* 弹窗 */
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  z-index: 200;
+  opacity: 0.6;
+}
+.modal-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal-content {
+  display: flex;
+  flex-direction:column;
+  width:100%;
+}
+
+/* 底部提示 */
+.btm-tip {
+  width: 100%;
+  padding: 30rpx 0;
+  height: 40rpx;
+  color: #686868;
+  text-align: center;
+  font-size: 20rpx;
+}
+

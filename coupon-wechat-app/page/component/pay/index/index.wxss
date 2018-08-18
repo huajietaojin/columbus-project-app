@@ -1,0 +1,128 @@
+
+@import '../../../common/common.wxss';
+page,.main{
+    height: 100%;
+    background-color: #f2f2f4;
+}
+
+.pay-box {
+  padding: 40rpx 30rpx;
+}
+.pay-box-store {
+  position: relative;
+  height: 132rpx;
+  line-height: 132rpx;
+  background-color: #fbfbfb;
+  padding: 30rpx 0;
+}
+.pay-box-text {
+  font-size: 36rpx;
+  padding-left:60rpx;
+  height: 74rpx;
+  line-height: 74rpx;
+  width: 470rpx;
+}
+.pay-box-type {
+  color: #6e6e6e;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  padding-left:60rpx;
+}
+.store-icon {
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 10rpx;
+  position: absolute;
+  right: 60rpx;
+  top: 45rpx;
+}
+.pay-box-con {
+  background-color: #ffffff;
+  padding: 40rpx 60rpx;
+  min-height:400rpx;
+}
+.pay-money-text {
+  line-height: 40rpx;
+  font-size: 30rpx;
+  color: #727272;
+}
+.pay-money-box {
+  position: relative;
+  height: 100rpx;
+  color: #000000;
+}
+.money-icon {
+  position: absolute;
+  left: 0;
+  top: 48rpx;
+  font-size: 36rpx;
+}
+.pay-discount-text {
+  margin-top: 50rpx;
+  color:#727272;
+}
+.pay-discount-box {
+  color: #ff810e;
+  font-size: 28rpx;
+  padding: 30rpx 0 20rpx;
+}
+.money-input {
+  line-height: 70rpx;
+  height: 70rpx;
+  font-size: 60rpx;
+  width: 70%;
+  position: absolute;
+  left: 42rpx;
+  top: 32rpx;
+  font-weight: 500;
+}
+.pay-money-box-bottom {
+  height: 15rpx;
+  border-bottom: 1rpx solid #ededed;
+}
+.pay-discount-box-bottom {
+  height: 2rpx;
+  border-bottom: 1rpx solid #ededed;
+  margin-bottom: 40rpx;
+}
+.pay-actual {
+  text-align: center;
+  line-height: 90rpx;
+  margin-bottom: 60rpx;
+}
+.money-icon-actual {
+  font-size: 50rpx;
+}
+.pay-actual-num {
+  font-size: 80rpx;
+  font-weight: 600;
+}
+.pay-money-btn {
+  margin-bottom: 40rpx;
+  font-size: 36rpx;
+}
+
+.pay-discount-tip {
+  text-align: right;
+  padding-top:8rpx;
+  font-size: 24rpx;
+  color:#bfbfbf;
+}
+.coupute-btn-con {
+  margin-top: 128rpx;
+  height: 160rpx;
+  line-height: 160rpx;
+  text-align: center;
+}
+.coupute-price {
+  width: 100%;
+  line-height: 2.555556;
+  border: 1px solid #ffb608;
+  color: #ffb608;
+  text-align: center;
+  font-size: 32rpx;
+  border-radius: 10rpx;
+  display: inline-block;
+  background-color: #ffffff;
+}

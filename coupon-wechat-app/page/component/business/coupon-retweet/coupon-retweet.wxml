@@ -1,0 +1,12 @@
+<view class="main">
+  <view>
+    <view class="goods-tab-nav {{curIndex === 0 ?'on':''}}" style="width:50%" bindtap="bindTap" data-index="0">浏览数</view>
+    <view class="goods-tab-nav {{curIndex === 1 ?'on':''}}" style="width:50%"  bindtap="bindTap" data-index="1">转发数</view>
+    <view class="goods-content">
+      <view wx:if="{{curIndex === 0}}">
+        浏览数
+      </view>
+      <view wx:if="{{curIndex === 1}}">转发数</view>
+    </view>
+  </view>
+</view>

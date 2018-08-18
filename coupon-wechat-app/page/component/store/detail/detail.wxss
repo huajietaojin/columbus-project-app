@@ -1,0 +1,64 @@
+@import '../../../common/common.wxss';
+
+page {
+  background-color: #ffffff;
+}
+.product-hd {
+  padding: 36rpx;
+  border-top: 1rpx solid #efefef;
+  min-height: 130rpx;
+}
+.product-name {
+  min-height: 80rpx;
+  line-height: 80rpx;
+  font-size: 36rpx;
+  color:#000;
+}
+.product-intro {
+  min-height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  color:#757575;
+}
+.line {
+  background-color: #efefef;
+  height: 20rpx;
+}
+.product-detail-title {
+  background-color: #ffffff;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  padding-left: 36rpx;
+  border-bottom: 1rpx solid #efefef;
+  margin-bottom: 15rpx;
+}
+.product-detail-con {
+  padding: 0 36rpx;
+}
+.card-large.none {
+  box-shadow:none;
+}
+.card-item-image1{
+  width: 100%;
+}
+.card-item-image1.prd {
+  border-radius: 10rpx;
+}
+
+/* 底部转发按钮 */
+.sheet-button {
+  padding:0;
+  line-height: 100rpx;
+}
+.sheet-item-button {
+  background-color: #fff;
+  position: relative;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 18px;
+}
+.sheet-button-cancel {
+  padding:0;
+  line-height: 60rpx;
+}

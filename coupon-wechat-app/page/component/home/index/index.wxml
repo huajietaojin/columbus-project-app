@@ -1,0 +1,68 @@
+<view class="common">
+  <view class="header">
+    <view class="userinfo">
+      <block wx:if="{{hasUserInfo}}">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <text class="userinfo-nickname" bindtap="updateUser">{{userInfo.nickName}}</text>
+      </block>
+      <button class="userinfo-avatar" wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo">点我显示头像</button>
+    </view>
+  </view>
+
+  <view class="section-scope bind">
+    <view class="section-item bind" bindtap="bindPhone" wx:if="{{!hasBindPhone}}">
+      <image class="iphone-icon" src="/image/iphone.png"></image>
+      <text class="item-text" style="padding-left:70rpx;">找不到优惠券？先登录试试</text>
+      <image class="direction-right" src="/image/right.png"></image>
+    </view>
+  </view>
+
+  <view class="section-scope coupon">
+    <navigator url="../my-coupon/my-coupon">
+      <view class="section-item">
+        <image class="direction-left" src="/image/ic_coupon_my.png"></image>
+        <text class="item-text">现金券</text>
+        <image class="direction-right" src="/image/right.png"></image>
+      </view>
+    </navigator>
+  </view>
+
+  <view class="section-scope mb">
+    <navigator url="../my-consume/my-consume">
+      <view class="section-item">
+        <image class="direction-left" src="/image/ic_list.png"></image>
+        <text class="item-text">消费记录</text>
+        <image class="direction-right" src="/image/right.png"></image>
+      </view>
+    </navigator>
+  </view>
+
+  <view class="section-scope mb">
+    <view class="section-item" bindtap='intoBusiness'>
+      <image class="direction-left" src="/image/ic_store_my.png"></image>
+      <text class="item-text">我是商家</text>
+      <image class="direction-right" src="/image/right.png"></image>
+    </view>
+  </view>
+
+  <!-- <view class="mask" wx:if="{{showModal}}">
+  </view>
+  <view class="modal-box" wx:if="{{showModal}}">
+    <view class="modal-content">
+      <view class="modal-content-hd">
+        <text class="modal-content-title-text">绑定手机号</text>
+        <image class="modal-close"  bindtap="closeModal" src="/image/close.png"></image>
+      </view>
+      <view class="modal-content-item">
+        <input type="text" value="{{bindMobile.mobile}}" bindinput="bindInputMobile"    class="input-text" placeholder="输入手机号"/>
+      </view>
+      <view class="modal-content-item">
+        <input type="text"  value="{{bindMobile.code}}" bindinput="bindInputCode" class="input-text" style="width:60%;float:left;" placeholder="输入验证码"/>
+        <view class="get-code" bindtap='getCode'>获取验证码</view>
+      </view>
+      <view class="modal-content-item" style="margin-top:30rpx;">
+        <button type="primary" bindtap='bindMobile'> 确定 </button>
+      </view>
+    </view>
+  </view> -->
+</view>

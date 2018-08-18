@@ -1,0 +1,68 @@
+@import '../../../common/common.wxss';
+.main{
+    background-color: #ebebeb;
+    min-height: 100%;
+}
+
+.list-box{
+  padding: 36rpx;
+}
+
+.list-box-item {
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 30rpx;
+  margin-bottom: 36rpx;
+}
+.list-item-hd {
+  height: 100rpx;
+  line-height: 100rpx;
+  position: relative;
+}
+.logo {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 20rpx;
+  left: 0rpx;
+}
+.store-name {
+  font-size: 36rpx;
+  margin-left: 90rpx;
+}
+.list-item-bd {
+  padding: 76rpx 0 44rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.pay-title {
+  color: #b3b3b3;
+  height: 44rpx;
+  font-size: 36rpx;
+  line-height: 44rpx;
+}
+.pay-num {
+  font-size: 60rpx;
+  color: #000;
+  line-height: 80rpx;
+  height: 80rpx;
+}
+.icon-money {
+  font-size: 40rpx;
+}
+.list-item-btm {
+  position: relative;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #404040;
+  font-size: 32rpx;
+  margin-top: 15rpx;
+}
+.icon-right {
+  position: absolute;
+  width: 30rpx;
+  height: 30rpx;
+  right: 0;
+  top: 25rpx;
+}

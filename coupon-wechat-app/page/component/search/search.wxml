@@ -1,0 +1,33 @@
+<view class="main">
+  <view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="请输入查询内容" value="{{wxSearchData}}" bindinput="wxSearchInput" bindconfirm="wxSearchConfirm" />
+        <view class="weui-icon-clear" wx:if="{{wxSearchData.length > 0}}" bindtap="wxSearchClear">
+          <icon type="clear" size="14"></icon>
+        </view>
+      </view>
+    </view>
+    <view class="weui-search-bar__cancel-btn" bindtap="wxSearchConfirm">
+      <text wx:if="{{wxSearchData.length>0}}" data-key='search'>搜索</text>
+      <text wx:else data-key='back'>返回</text>
+    </view>
+  </view>
+
+  <view class="newest">
+    <scroll-view scroll-y="true" class="scroll-view-area" scroll-with-animation="true" enable-back-to-top="true">
+      <block wx:for="{{stores}}" wx:key="{{index}}">
+        <view class="card-out">
+          <view class="card-large" data-id="{{item.id}}" catchtap='intoStore'>
+            <image class="card-large-image" data-id="{{item.id}}" mode="aspectFill" lazy-load="true" src="{{item.cover_picture}}" />
+            <view class="card-content">
+              <view class="store-title ellipsis">{{item.name}}</view>
+              <view class="store-notice ellipsis">{{item.cover_title}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

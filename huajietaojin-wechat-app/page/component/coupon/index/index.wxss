@@ -1,0 +1,128 @@
+@import '../../../common/common.wxss';
+
+.indicator-class {
+width: 100%;
+height: 380rpx;
+}
+
+.banner image {
+  width: 100%;
+  height: 340rpx;
+}
+
+.newest-title {
+  width: 100%;
+  padding: 30rpx 0;
+  height: 30rpx;
+  color: #ab956d;
+  text-align: center;
+}
+
+
+.newest-box {
+  padding: 0 40rpx;
+}
+
+.newest-box .newest-list {
+  display: inline-block;
+  width: 325rpx;
+  height: 325rpx;
+  margin: 0 20rpx 20rpx 0;
+  border-radius: 10px;
+  text-align: center;
+  background: #f5f6f5;
+}
+
+.newest-box .newest-list:nth-child(2n) {
+  margin-right: 0;
+}
+
+.newest-box .newest-list image {
+  width: 175rpx;
+  height: 175rpx;
+  margin: 20rpx 0 10rpx;
+}
+
+.newest-box .newest-list .newest-text {
+  font-size: 32rpx;
+}
+
+/* 位置 */
+.servers-box {
+  position: fixed;
+  left: 30rpx;
+  top: 24rpx;
+  z-index: 200;
+}
+.servers-icon{
+  width: 24rpx;
+  height: 24rpx;
+  margin-top: 6rpx;
+  margin-left: 28rpx;
+  margin-right: 8rpx;
+}
+.servers-text {
+  display: inline-block;
+  height: 36rpx;
+  line-height: 36rpx;
+  font-size: 28rpx;
+  color: #666666;
+}
+
+/* 滑块 */
+.scroll-view-area {
+  height: 100%;
+  width: 100%;
+}
+
+.scroll-view-item {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+}
+.action-area {
+  height: 80rpx;
+  width: 100%;
+  background-color: #ffffff;
+  border-top:1rpx solid #f6f6f6;
+  border-bottom:1rpx solid #fbf9f9;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.action-item {
+  display: flex;
+}
+
+.action-text {
+  font-size: 32rpx;
+  color: #09bb07;
+  margin-left: 8rpx;
+  padding-right: 8rpx;
+}
+
+.action-img {
+  height: 36rpx;
+  width: 36rpx;
+  margin-right: 16rpx;
+}
+
+
+.scroll-sheet {
+  white-space: nowrap;
+  display: flex;
+}
+
+.scroll-view-sheet {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+}
+
+

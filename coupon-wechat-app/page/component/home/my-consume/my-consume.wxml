@@ -1,0 +1,25 @@
+<view class="main">
+  <view class="list-box">
+    <block wx:for="{{list}}" wx:key="{{index}}">
+    <view class="list-box-item">
+      <view class="list-item-hd">
+        <image src="{{item.store_logo}}" class="logo"></image>
+        <text class="store-name">{{item.store_name}}</text>
+      </view>
+      <view class="list-item-bd">
+        <view class="pay-title">付款金额</view>
+        <view class="pay-num"><text class="icon-money">¥</text>{{item.final_price}}</view>
+      </view>
+      <navigator url="../my-consume-detail/my-consume-detail?unid={{item.unid}}">
+        <view class="list-item-btm">
+          <text>查看账单</text>
+          <image src="/image/right.png" class="icon-right"></image>
+        </view>
+      </navigator>
+    </view>
+    </block>
+    <view class="btm-tip" wx:if="{{!hasConsume}}" >
+      暂无消费记录！
+    </view>
+  </view>
+</view>

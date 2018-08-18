@@ -1,0 +1,140 @@
+/* page/component/bootstrap/index/index.wxss */
+.play-icon-cover {
+  position: absolute;
+  top: 40%;
+  width: 76rpx;
+  height: 76rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.play-icon {
+  width: 72rpx;
+  height: 72rpx;
+}
+
+.share-button {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.ic-white {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.ic-white-small {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.top-cover {
+  position: absolute;
+  top: 2rpx;
+  left: 0;
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+}
+
+.store-logo-area {
+  width: 120rpx;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.store-name-area {
+  width: 85%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color:#efefef;
+  font-size: 16px;
+  font-weight: 300;
+}
+.store-round-logo {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2rpx solid #fff;
+}
+.store-direction{
+  width:76rpx;
+  height: 90rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.left-tool-cover {
+  position: absolute;
+  bottom: 200rpx;
+  right: 0;
+  width: 112rpx;
+  height: 390rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.left-tool-item {
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.left-tool-text {
+  width: 100%;
+  height: 42rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color:#efefef;
+  font-size: 8px;
+  font-weight: 200;
+}
+
+.bottom-cover {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 132rpx;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.02);
+  align-items: center;
+  /* border-top:1px solid #f8f8f8 */
+}
+
+.home-right-area {
+  width: 116rpx;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.red-right-arrow {
+  width: 108rpx;
+  height: 108rpx;
+}
+
+.video-skip-area {
+  width: 260rpx;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.video-skip-item {
+  width: 100rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

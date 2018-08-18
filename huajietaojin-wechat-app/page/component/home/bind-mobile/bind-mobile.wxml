@@ -1,0 +1,19 @@
+<view class="common">
+  <view class="modal-box-bind">
+    <view class="modal-content-bind">
+      <!-- <view class="modal-content-hd">
+        <text class="modal-content-title-text">绑定手机号</text>
+      </view> -->
+      <view class="modal-content-item">
+        <input type="text" value="{{bindMobile.mobile}}" bindinput="bindInputMobile"    class="input-text" placeholder="输入手机号"/>
+      </view>
+      <view class="modal-content-item">
+        <input type="text"  value="{{bindMobile.code}}" bindinput="bindInputCode" class="input-text" style="width:60%;float:left;" placeholder="输入验证码"/>
+        <view bindtap='getCode' class="{{codeClass}}">{{btnText}}</view>
+      </view>
+      <view class="modal-content-item" style="margin-top:30rpx;">
+        <button class="app-normal-btn-long" bindtap='bindMobile' loading="{{loading}}" > 登 录 </button>
+      </view>
+    </view>
+  </view>
+</view>

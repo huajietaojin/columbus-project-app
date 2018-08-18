@@ -1,0 +1,69 @@
+<view class="main">
+  <view class="action-area">
+    <view class="action-item">
+      <image src="/image/ic_position.png" class="servers-icon"></image>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{index}}" range-key="m" range="{{districts}}">
+        <view class="servers-text">
+          {{selectCityName}} >
+        </view>
+      </picker>
+    </view>
+    <view class="action-item">
+      <image src="/image/search.png" bindtap="toSearchPage" class="action-img"></image>
+    </view>
+  </view>
+
+  <view class="newest">
+    <view class="newest-title"></view>
+
+    <scroll-view scroll-y="true" class="scroll-view-area" scroll-with-animation="true" enable-back-to-top="true">
+      <block wx:for="{{stores}}" wx:key="{{index}}">
+        <view class="card-out">
+          <view class="card-large" data-id="{{item.store_id}}" catchtap='intoStore'>
+            <image class="card-large-image" data-id="{{item.store_id}}"  mode="aspectFill" lazy-load="true" src="{{item.store_cover_picture}}" />
+            <view class="card-content">
+              <view class="store-title ellipsis">{{item.store_name}}</view>
+              <view class="store-notice ellipsis">{{item.store_cover_title}}</view>
+              <view class="card-type">
+                <block wx:for="{{item.types}}" wx:key="{{index}}">
+                  <text wx:if="{{item === '1'}}" class="coupon-icon bg-cash">现金券</text>
+                  <text wx:if="{{item === '2'}}" class="coupon-icon bg-discount">折扣券</text> </block>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+
+    <view class="btm-tip" wx:if="{{!hasMore}}">
+      <text>-- Copyright @ 2018 花街淘金. All rights reserved. --</text>
+      <!-- <text>-- 没有更多了 --</text> -->
+    </view>
+  </view>
+</view>
+
+<action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange">
+  <action-sheet-item>
+    <picker-view indicator-class="indicator-class" style="width: 100%; height:290px;">
+      <picker-view-column>
+        <block wx:for="{{coupons}}" wx:key="{{index}}">
+          <view class="card-list-sheet scroll-view-sheet">
+            <navigator url="../detail/detail?couponId={{item.id}}">
+              <view class="card-item scroll">
+                <image wx:if="{{item.type === 1}}" class="card-item-image" mode="aspectFill" lazy-load="true" src="/image/bg_cashcoupons.png" />
+                <image wx:if="{{item.type === 2}}" class="card-item-image" mode="aspectFill" lazy-load="true" src="/image/bg_discount_coupons.png" />
+                <image class="card-item-logo" mode="aspectFill" lazy-load="true" src="{{item.picture}}" />
+                <view class="card-store-title">{{item.store_name}}</view>
+                <view class="card-line"></view>
+                <view wx:if="{{item.type === 1}}" class="card-coupon-num">¥{{item.content}}</view>
+                <view wx:if="{{item.type === 2}}" class="card-coupon-num">{{item.content}}折</view>
+                <view wx:if="{{item.type === 1}}" class="card-coupon-txt">现金券</view>
+                <view wx:if="{{item.type === 2}}" class="card-coupon-txt">折扣券</view>
+              </view>
+            </navigator>
+          </view>
+        </block>
+      </picker-view-column>
+    </picker-view>
+  </action-sheet-item>
+</action-sheet>

@@ -1,0 +1,45 @@
+.main{
+    background-color: #ebebeb;
+    height: 100%;
+}
+
+.list-box{
+  padding: 36rpx;
+}
+
+.list-box-item {
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 30rpx;
+  margin-bottom: 36rpx;
+}
+.list-item-hd {
+  height: 100rpx;
+  line-height: 100rpx;
+  position: relative;
+}
+.logo {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 20rpx;
+  left: 0rpx;
+}
+.store-name {
+  font-size: 36rpx;
+  margin-left: 90rpx;
+}
+.list-item-bd {
+  padding: 50rpx 0 60rpx;
+  border-top: 1rpx solid #e5e5e5;
+}
+.item-detail {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 32rpx;
+}
+.item-detail-label {
+  color: #8f8f8f;
+  margin-right: 20rpx;
+}

@@ -1,0 +1,30 @@
+<view class="main">
+  <view class="modal-box">
+    <view class="modal-content">
+      <view class="modal-content-hd">
+        <text class="modal-content-title-text">商家免费注册</text>
+        <image class="modal-close" src="/image/ico_vip.png"></image>
+      </view>
+      <view class="modal-content-item">
+        <input type="number" value="{{register.mobile}}" bindinput="bindRegisterMobile" class="input-text" placeholder="请输入手机号" />
+      </view>
+      <view class="modal-content-item">
+        <input type="text" value="{{register.email}}" bindinput="bindRegisterEmail" class="input-text" placeholder="请输入邮箱" />
+      </view>
+      <view class="modal-content-item">
+        <input type="text" value="{{register.code}}" bindinput="bindRegisterCode" class="input-text" style="width:60%;float:left;" placeholder="输入验证码" />
+        <view class="{{codeClass}}" bindtap="getCode">{{btnText}}</view>
+      </view>
+      <view class="modal-content-item">
+        <input type="text" value="{{register.password}}" bindinput="bindRegisterPassword" class="input-text" password="true" placeholder="请输入密码" />
+      </view>
+      <view class="modal-content-item" style="margin-top:30rpx;">
+        <button type="primary" bindtap='register' disabled="{{disabled}}"> 注 册 </button>
+      </view>
+      <view class="modal-content-item" style="margin-top:20rpx;text-align: right;font-size:32rpx;height:40rpx;">
+        <text>已有账号，</text>
+        <text class="color-red" bindtap="backToLogin" data-index="0">直接登录</text>
+      </view>
+    </view>
+  </view>
+</view>

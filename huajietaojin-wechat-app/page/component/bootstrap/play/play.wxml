@@ -1,0 +1,84 @@
+<!--page/component/bootstrap/play/play.wxml-->
+<view class="container">
+
+  <video catchtap="clickVideo" bindplay="onPlayReady" binderror="onPlayError" controls="{{false}}" style="width:{{'100%'}};height:{{videoHeight}};min-height:99%;" autoplay="{{false}}" loop="{{true}}" id="myVideo" show-center-play-btn="{{false}}" src="{{video_url}}"
+    muted="{{false}}" objectFit="cover">
+
+    <cover-view wx:if="{{showPoster}}">
+      <cover-image catchtap="clickCoverImage" mode="aspectFit" style="width:{{'100%'}};height:{{videoHeight}};min-height:99%;" src="{{cover_picture}}" />
+    </cover-view>
+
+    <cover-view wx:if="{{isPlaying == false}}" class="play-icon-cover">
+      <cover-image catchtap="clickHandStop" class="play-icon" src="/image/play_gray.png" bindtap="videoPlay" />
+    </cover-view>
+
+
+  </video>
+  <cover-view wx:if="{{hasInitFirstVideo && hasRemoteVideo}}" class="top-cover" catchtap="gotoStore">
+    <cover-view class="store-logo-area">
+      <cover-image class="store-round-logo" src="{{store_logo}}" />
+    </cover-view>
+    <cover-view class="store-name-area">
+      <cover-view class="ellipsis">
+        @{{store_name}}
+      </cover-view>
+    </cover-view>
+    <cover-view class="store-direction">
+        <cover-image class="ic-white-small" src="/image/directional.png" />
+    </cover-view>
+  </cover-view>
+
+  <cover-view wx:if="{{hasInitFirstVideo}}" class="left-tool-cover">
+    <cover-view class="left-tool-item" wx:if="{{hasMoreThanOne}}">
+      <cover-image catchtap="gotoSearch" class="ic-white" src="/image/white_search.png" />
+      <cover-view class="left-tool-text">
+        <cover-view>搜索</cover-view>
+      </cover-view>
+    </cover-view>
+
+    <cover-view class="left-tool-item" wx:if="{{hasRemoteVideo}}">
+      <button open-type="share" class="share-button" size="small">
+      <cover-image class="ic-white" src="/image/share_white.png" />
+      <cover-view class="left-tool-text">
+        <cover-view>分享</cover-view>
+      </cover-view>
+      </button>
+    </cover-view>
+
+    <cover-view class="left-tool-item">
+      <cover-image catchtap="gotoHome" class="ic-white" src="/image/ic_user.png" />
+      <cover-view class="left-tool-text">
+        <cover-view>我的</cover-view>
+      </cover-view>
+    </cover-view>
+
+
+  </cover-view>
+
+  <cover-view wx:if="{{hasInitFirstVideo}}" class="bottom-cover">
+    <cover-view class="video-skip-area" wx:if="{{hasMoreThanOne}}">
+      <cover-view class="video-skip-item">
+        <cover-image catchtap="playPrevious" class="ic-white" src="/image/ic_skip_previous.png" />
+        <cover-view class="left-tool-text">
+          <cover-view>Prev</cover-view>
+        </cover-view>
+      </cover-view>
+      <cover-view class="video-skip-item">
+        <cover-image catchtap="playNext" class="ic-white" src="/image/ic_skip_next.png" />
+        <cover-view class="left-tool-text">
+          <cover-view>Next</cover-view>
+        </cover-view>
+      </cover-view>
+    </cover-view>
+    <cover-view wx:else>
+      <cover-view class="left-tool-text">
+          <cover-view>2018宣传片</cover-view>
+      </cover-view>
+    </cover-view>
+
+    <cover-view class="home-right-area">
+      <cover-image catchtap="gotoStreet" class="red-right-arrow" src="/image/circle_right.png" />
+    </cover-view>
+  </cover-view>
+
+</view>

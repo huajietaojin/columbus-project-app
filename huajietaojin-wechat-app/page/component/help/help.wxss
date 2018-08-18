@@ -1,0 +1,124 @@
+@import '../../common/common.wxss';
+.main{
+    height: 100%;
+}
+.modal-item-icon {
+  padding-top: 100rpx;
+  text-align: center;
+  height: 165rpx;
+  line-height:165rpx;
+}
+.logo {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 10rpx;
+  box-shadow:0rpx 3rpx 0rpx #dedede;
+}
+.modal-item-01 {
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+.modal-item-02 {
+  height: 550rpx;
+  position: relative;
+}
+.num-box {
+  padding-top: 170rpx;
+  text-align: center;
+  font-size: 110rpx;
+  line-height: 120rpx;
+}
+.num-all-box {
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  color: #aaaaaa;
+}
+.num-box-line {
+  text-align: center;
+  line-height: 4rpx;
+}
+.line {
+  background-color: #e5e5e5;
+  height: 1rpx;
+  width: 110px;
+  display: inline-block;
+}
+.modal-item-03 {
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 160rpx;
+}
+
+.item-text-bar {
+  padding: 0 15rpx;
+  font-size: 100rpx;
+}
+.item-text-green {
+  font-size: 36rpx;
+}
+.item-text-num {
+  font-size: 100rpx;
+}
+.item-text-red {
+  color:red;
+}
+
+.circle-box {
+  margin-top: 10vw;
+}
+
+.circle {
+  position: absolute;
+  left: 50%;
+  top: 50%; 
+  transform: translate(-50%,-50%); 
+}
+
+.open-rule {
+  position: fixed;
+  right: 0;
+  top: 100rpx;
+  font-size: 26rpx;
+  background-color: #645421;
+  color: #ffffff;
+  padding: 10rpx 15rpx 10rpx 25rpx;
+  border-top-left-radius:30rpx;
+  border-bottom-left-radius:30rpx;
+  display: inline-block;
+  opacity: 0.7;
+}
+.modal-content-con{
+  background-color: #ffffff;
+  margin: 0 70rpx;
+  padding: 30rpx;
+  border-radius: 10rpx;
+}
+.modal-content-hd {
+  font-size: 34rpx;
+  line-height: 40rpx;
+  margin-bottom: 20rpx;
+}
+.modal-content-item {
+  font-size: 26rpx;
+  line-height: 40rpx;
+  margin-bottom: 20rpx;
+  color: #353535;
+  text-align: left;
+}
+.modal-content-close {
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  margin-top: 68rpx;
+}
+.icon-close {
+  width: 56rpx;
+  height: 56rpx;
+  display: inline-block;
+}

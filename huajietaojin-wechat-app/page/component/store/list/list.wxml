@@ -1,0 +1,24 @@
+<view class="main">
+  <scroll-view scroll-y="true" class="scroll-view-area" scroll-with-animation="true" enable-back-to-top="true">
+      <block wx:for="{{products}}" wx:key="{{index}}">
+        <view class="card-out">
+          <navigator url="../detail/detail?id={{item.id}}">
+          <view class="card-large none">
+              <view class="card-list">
+                <view class="card-item">
+                  <image class="card-item-image prd" mode="aspectFill" lazy-load="true" src="{{item.cover_picture}}" />
+                </view>
+                <view class="product-name">
+                  {{item.name}}
+                </view>
+              </view>
+          </view>
+          </navigator>
+        </view>
+      </block>
+    </scroll-view>
+
+    <view class="btm-tip" wx:if="{{!hasMore}}" >
+      暂无商品内容！
+    </view>
+</view>

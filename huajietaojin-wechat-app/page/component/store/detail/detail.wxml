@@ -1,0 +1,46 @@
+<view class="main">
+  <view class="product-hd">
+    <view class="product-name">
+      <text>{{product.name}}</text>
+    </view>
+    <view class="product-intro">
+      <text>{{product.intro}}</text>
+    </view>
+  </view>
+  <view class="line"></view>
+  <view class="product-bd">
+    <view class="product-detail-title">
+      <text>产品详情</text>
+    </view>
+    <view class="product-detail-con">
+    <scroll-view scroll-y="true" class="scroll-view-area" scroll-with-animation="true" enable-back-to-top="true">
+        <block wx:for="{{product.show_pictures}}" wx:key="{{index}}">
+          <view class="card-out">
+              <view class="card-list">
+                <view class="card-item">
+                  <image class="card-item-image1 prd" mode="aspectFill" lazy-load="true" src="{{item}}" />
+                </view>
+              </view>
+          </view>
+        </block>
+      </scroll-view>
+      <view class="btm-tip" wx:if="{{!hasMore}}" >
+        暂无商品图片！
+      </view>
+      </view>
+    </view>
+
+    <view class="float-home-btn" bindtap="onHomeBtnShow">
+      <image class="float-home-btn-image" src="/image/index.png"></image>
+    </view>
+
+    <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange">
+      <block wx:for="{{actionSheetItems}}" wx:key="{{index}}">
+        <action-sheet-item wx:if="{{index == 0}}" class="sheet-button">
+          <button class="sheet-item-button" open-type="share" hover-class="btn-hover">{{item.txt}}</button>
+        </action-sheet-item>
+        <action-sheet-item bindtap="{{item.bindtap}}"  class="sheet-button" wx:else>{{item.txt}}</action-sheet-item>
+      </block>
+      <action-sheet-cancel  class="sheet-button-cancel">取消</action-sheet-cancel>
+    </action-sheet>
+</view>
