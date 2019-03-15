@@ -3,7 +3,7 @@
 */
 const test_host = "https://gateway.intentplay.com";
 
-const product_host = "https://apiwechat.huajietaojin.cn";
+const product_host = "https://api.huajietaojin.cn";
 
 module.exports = {
   // 公共服务
